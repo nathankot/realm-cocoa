@@ -20,6 +20,7 @@ x.x.x Release notes (yyyy-MM-dd)
 * Committing write transactions (via `commitWrite` / `commitWriteTransaction` and
   `write` / `transactionWithBlock`) now optionally allow for handling errors when
   the disk is out of space.
+* Added `-[RLMMigration renameClassFrom:to:]`/`Migration.renameClass(_:to:)`.
 
 ### Bugfixes
 
