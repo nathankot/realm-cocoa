@@ -28,6 +28,10 @@ x.x.x Release notes (yyyy-MM-dd)
 * Fix crash due to race condition in `RLMRealmConfiguration` where the default
   configuration was in the process of being copied in one thread, while
   released in another.
+* Fix assertion failure when inserting NSData between 8MB and 16MB in size.
+* Fix assertion failure when rolling back a migration which removed an object
+  link or `RLMArray`/`List` property.
+* Add the path of the file being opened to file open errors.
 
 0.95.0 Release notes (2015-08-25)
 =============================================================
