@@ -479,3 +479,17 @@ void ObjectStore::delete_data_for_object(Group *group, const StringData &object_
     }
 }
 
+bool ObjectStore::is_empty(Group *group) {
+    Schema schema = schema_from_group(group);
+    for (auto &object_schema : schema) {
+        TableRef table = table_for_object_type(group, object_schema.name);
+        if (!table) {
+            continue;
+        }
+        if (!table->is_empty()) {
+            return false;
+        }
+    }
+    return true;
+}
+
