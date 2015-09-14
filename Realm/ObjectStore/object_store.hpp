@@ -75,7 +75,7 @@ namespace realm {
         static void delete_data_for_object(Group *group, const StringData &object_type);
 
         // indicates if this group contains any objects
-        static bool is_empty(Group *group);
+        static bool is_empty(const Group *group);
 
     private:
         // set a new schema version

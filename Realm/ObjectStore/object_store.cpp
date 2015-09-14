@@ -479,9 +479,9 @@ void ObjectStore::delete_data_for_object(Group *group, const StringData &object_
     }
 }
 
-bool ObjectStore::is_empty(Group *group) {
+bool ObjectStore::is_empty(const Group *group) {
     for (size_t i = 0; i < group->size(); i++) {
-        TableRef table = group->get_table(i);
+        TableRef table = ((Group *)group)->get_table(i);
         string object_type = object_type_for_table_name(table->get_name());
         if (!object_type.length()) {
             continue;
