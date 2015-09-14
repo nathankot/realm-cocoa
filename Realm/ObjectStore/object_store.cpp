@@ -480,10 +480,10 @@ void ObjectStore::delete_data_for_object(Group *group, const StringData &object_
 }
 
 bool ObjectStore::is_empty(Group *group) {
-    Schema schema = schema_from_group(group);
-    for (auto &object_schema : schema) {
-        TableRef table = table_for_object_type(group, object_schema.name);
-        if (!table) {
+    for (size_t i = 0; i < group->size(); i++) {
+        TableRef table = group->get_table(i);
+        string object_type = object_type_for_table_name(table->get_name());
+        if (!object_type.length()) {
             continue;
         }
         if (!table->is_empty()) {
@@ -492,4 +492,3 @@ bool ObjectStore::is_empty(Group *group) {
     }
     return true;
 }
-
