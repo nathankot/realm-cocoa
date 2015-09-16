@@ -28,6 +28,8 @@ x.x.x Release notes (yyyy-MM-dd)
 * Fix crash due to race condition in `RLMRealmConfiguration` where the default
   configuration was in the process of being copied in one thread, while
   released in another.
+* Fix crashes when the first Realm opened uses a class subset and later Realms
+  opened do not.
 
 0.95.0 Release notes (2015-08-25)
 =============================================================
