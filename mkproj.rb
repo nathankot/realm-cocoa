@@ -7,7 +7,7 @@ require 'xcodeproj'
 
 # Configuration
 compatibility_name = 'Carthage'
-schemes_to_build = ['iOS Dynamic', 'OSX']
+schemes_to_build = ['iOS Dynamic']
 projects_to_build = ['Realm.xcodeproj', 'RealmSwift.xcodeproj']
 
 
